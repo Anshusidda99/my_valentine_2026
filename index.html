@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Valentine 💖</title>
+
+  <!-- Elegant Bold Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #ffd6e8, #fff1f7);
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* 🌹 Elegant bold titles */
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 44px;
+      color: #ff4d6d;
+      margin-bottom: 10px;
+      letter-spacing: 1.6px;
+    }
+
+    p {
+      max-width: 620px;
+      font-size: 18px;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #e63950;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* 💖 Sticker image below title */
+    .love-sticker {
+      width: 220px;
+      margin: 20px 0 20px;
+      animation: softFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes softFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* 💌 Typing text */
+    #typingText {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 23px;
+      color: #000;
+      margin-top: 18px;
+      line-height: 1.0; 
+      letter-spacing: 0.9px;
+    }
+
+    #typingText::after {
+      content: "|";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* Soft glow */
+    .glow {
+      animation: glowEffect 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowEffect {
+      from { text-shadow: 0 0 3px #ddd; }
+      to { text-shadow: 0 0 10px #aaa; }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: 0;
+      font-size: 20px;
+      animation: floatUp 4s linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    /* Buttons container */
+    .btn-box {
+      position: relative;
+      height: 160px;
+      width: 260px;
+      margin-top: 30px;
+    }
+
+    #noBtn {
+      position: absolute;
+      left: 120px;
+      top: 60px;
+      background: #adb5bd;
+    }
+
+    /* Heart explosion */
+    .explode-heart {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      font-size: 26px;
+      pointer-events: none;
+      animation: explode 1.2s ease-out forwards;
+    }
+    /* Remove extra spacing between note & sticker */
+.top-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Tighten dare note */
+.dare-note {
+  margin: 0 0 6px;   /* 👈 no top gap, small bottom gap */
+  font-size: 22px;
+  color: #0c0c0c;
+  font-weight: 500;
+}
+
+/* Pull sticker up slightly */
+.valentine-sticker {
+  margin-top: -150px;     /* 👈 remove gap */
+}
+
+/* 🔼 Increase FINAL SECTION sticker size */
+#section5 .love-sticker {
+  width: 320px;   /* increase more if needed: 350px / 380px */
+  margin-bottom: 5px;
+}
+
+/* 🔼 Increase FINAL SECTION heading text */
+#section5 h2 {
+  font-size: 42px;   /* bigger line */
+  line-height: 1.2;
+  margin-top:-80px ;
+}
+/* 🔼 Increase FINAL SECTION paragraph text */
+#section5 p {
+  font-size: 24px;   /* try 26px or 28px if you want bigger */
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.yay-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px;
+  font-weight: 700;
+  color: #ff4d6d;
+  margin-bottom: -30px;   /* tight gap above sticker */
+}
+
+
+
+
+
+    @keyframes explode {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(
+          calc(-50% + var(--x)),
+          calc(-50% + var(--y))
+        ) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🌸 SECTION 1 -->
+<section>
+  <h1>Hello My Love 💖</h1>
+
+  <!-- 🔽 STICKER IMAGE BELOW TITLE -->
+  <!-- Replace "sticker.png" with your actual image file name -->
+  <img src="sticker-1.1-removebg-preview.png" alt="Love Sticker" class="love-sticker">
+
+
+  <p>
+    Something small, made with a whole lot of love💕
+  </p>
+
+  <button onclick="scrollToNext()">Start 💕</button>
+</section>
+
+<!-- 💕 SECTION 2 -->
+<!-- 💕 SECTION 2 -->
+<section id="section2">
+  <h2>Do You Know Something?</h2>
+
+  <!-- Sticker below heading -->
+  <img src="sticker-1.2-removebg-preview.png" alt="Love Sticker" class="love-sticker">
+
+  <p>Click the button and see magic ❣️</p>
+  <button onclick="showLove()">Click Me 🤍</button>
+</section>
+
+
+<!-- 💌 SECTION 3 -->
+<section id="section3" class="hidden">
+  <h2>From My Heart💌</h2>
+
+  <!-- Sticker shown immediately -->
+  <img src="sticker-1.3-removebg-preview.png" alt="Love Sticker" class="love-sticker">
+
+  <!-- Typing love message -->
+  <p id="typingText"></p>
+
+  <button onclick="scrollToFinal()">One Last Thing 🌹</button>
+</section>
+
+
+<!-- 🌹 SECTION 4 -->
+<section id="section4" class="hidden">
+
+  <div class="top-note">
+    <p class="dare-note">Note: Dare to click <span>“No”😏</span></p>
+
+    <img src="sticker-1.4-removebg-preview.png" alt="Love Sticker"
+         class="love-sticker valentine-sticker">
+  </div>
+
+  <h2>Will You Be My Valentine?</h2>
+
+  <div class="btn-box">
+    <button onclick="yesAnswer()">Yes 😚</button>
+    <button id="noBtn" onmouseover="moveNo()">No 💔</button>
+  </div>
+
+</section>
+<!-- 💖 FINAL YES SECTION -->
+<section id="section5" class="hidden">
+  <h2 class="yay-title">Yayyyyy!!!!! ✨</h2>
+  <img src="sticker-1.5-removebg-preview.png" class="love-sticker">
+  <h2>That was the best decision of your life 💘</h2>
+  <p>I’m really happy you chose me 💖</p>
+</section>
+
+
+
+
+
+<script>
+  function scrollToNext() {
+    document.getElementById("section2").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function scrollToFinal() {
+    document.getElementById("section4").classList.remove("hidden");
+    document.getElementById("section4").scrollIntoView({ behavior: "smooth" });
+  }
+
+  const message =
+  "You make ordinary moments feel warm and meaningful,\n" +
+  "like my heart smiles a little whenever you’re around.\n" +
+  "You are truly special to me. ✨💖";
+
+  let index = 0;
+  let typingStarted = false;
+
+  function typeMessage() {
+    const el = document.getElementById("typingText");
+    if (index < message.length) {
+      el.innerHTML += message[index] === "\n" ? "<br><br>" : message[index];
+      index++;
+      setTimeout(typeMessage, 70);
+    } else {
+      el.classList.add("glow");
+    }
+  }
+
+  function showLove() {
+    document.getElementById("section3").classList.remove("hidden");
+    document.getElementById("section3").scrollIntoView({ behavior: "smooth" });
+    createHearts();
+    if (!typingStarted) {
+      typingStarted = true;
+      typeMessage();
+    }
+  }
+
+  function yesAnswer() {
+  explodeHearts();
+  document.getElementById("section5").classList.remove("hidden");
+  document.getElementById("section5").scrollIntoView({ behavior: "smooth" });
+}
+
+
+  function moveNo() {
+    const noBtn = document.getElementById("noBtn");
+    noBtn.style.transform =
+      `translate(${Math.random()*200-100}px, ${Math.random()*120-60}px)`;
+    noBtn.innerText = "Hehe 😜";
+  }
+
+  function createHearts() {
+    for (let i = 0; i < 15; i++) {
+      const h = document.createElement("div");
+      h.className = "heart";
+      h.innerHTML = "💖";
+      h.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 4000);
+    }
+  }
+
+  function explodeHearts() {
+    const emojis = ["💖","💗","💓","💕","❤️"];
+    for (let i = 0; i < 30; i++) {
+      const h = document.createElement("div");
+      h.className = "explode-heart";
+      h.innerHTML = emojis[Math.floor(Math.random()*emojis.length)];
+      h.style.setProperty("--x", Math.random()*400-200+"px");
+      h.style.setProperty("--y", Math.random()*400-200+"px");
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 1200);
+    }
+  }
+</script>
+
+</body>
+</html>
